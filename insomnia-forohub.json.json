@@ -1,0 +1,227 @@
+type: collection.insomnia.rest/5.0
+name: ForoHub API
+meta:
+  id: wrk_e90855822719493fa113524d147ef18f
+  created: 1755680328526
+  modified: 1755680328526
+  description: ""
+collection:
+  - url: http://localhost:8080/api/v1/auth/register
+    name: Registras Usuario
+    meta:
+      id: req_d5c2b6bc57bf401b9523bc58ea99fcb0
+      created: 1755680426613
+      modified: 1755694375434
+      isPrivate: false
+      description: ""
+      sortKey: -1755680426613
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "maga+2@example.com",
+          "password": "123456"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.4.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/v1/topics
+    name: Crear topic
+    meta:
+      id: req_7aac84e739cc4290b9aa1fc338d9dd49
+      created: 1755682792182
+      modified: 1755691949520
+      isPrivate: false
+      description: ""
+      sortKey: -1755682792182
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "Mi primer topic",
+          "message": "Estoy probando mi API con Insomnia ",
+          "courseId": 1
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_372ba3509b364999afe6c735012917cc
+      - name: User-Agent
+        value: insomnia/11.4.0
+        id: pair_ba32db75063b469e9feb392288bb17fa
+      - id: pair_c05a021c071e4ec699aca018b5892093
+        name: ""
+        value: ""
+        description: ""
+        disabled: false
+      - id: pair_741bc35b4e83484882fe30fc7618101a
+        name: Authorization
+        value: Beapair_741bc35b4e83484882fe30fc7618101arer
+          eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYUBtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzU1NjgyNjQ3LCJleHAiOjE3NTU3NjkwNDd9.A0sW0-HSr-Ocz8wavesnjFsWw2bl8dx3Mw6Kdyol32s
+        description: ""
+        disabled: true
+    authentication:
+      type: bearer
+      token: ""
+      disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/v1/topics?page=0&size=10&sort=createdAt,desc
+    name: Listar todos los topicos
+    meta:
+      id: req_1b31ac13ea5a47789eb300f5a74ca9d9
+      created: 1755684092383
+      modified: 1755691634398
+      isPrivate: false
+      description: ""
+      sortKey: -1755684092383
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.4.0
+        id: pair_67b69382f4164a359896877db2cb1222
+      - id: pair_22017edd6b364727835cc7665ae194b8
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYUBtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzU1NjgyNjQ3LCJleHAiOjE3NTU3NjkwNDd9.A0sW0-HSr-Ocz8wavesnjFsWw2bl8dx3Mw6Kdyol32s
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/v1/topics/{id}
+    name: Obtener por id
+    meta:
+      id: req_f601a80b529a4eb0a92493729adb28a5
+      created: 1755693291676
+      modified: 1755693693626
+      isPrivate: false
+      description: ""
+      sortKey: -1755693291676
+    method: GET
+    parameters:
+      - id: pair_7637674b9c004a6085e9448fe255bce5
+        name: path Parameters
+        value: id +2
+        description: ""
+        disabled: false
+    headers:
+      - name: User-Agent
+        value: insomnia/11.4.0
+        id: pair_c9faf8bbd294485ba7ac18a30d91b9c3
+      - id: pair_7a8725657176456880baaa4c84a7dc69
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWdhMkBleGFtcGxlLmNvbSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzU1NjkyOTIzLCJleHAiOjE3NTU3NzkzMjN9.fNf-5UknUAzbtExTgOJ8mxLsamfHZDSHEq7k7DN0TJM
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/v1/topics/{id}
+    name: Actualizar
+    meta:
+      id: req_0e94ec69911b42b9b94bd166f1c05a1a
+      created: 1755693966742
+      modified: 1755694080907
+      isPrivate: false
+      description: ""
+      sortKey: -1755693966742
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "Título editado",
+          "message": "Mensaje editado",
+          "status": "OPEN"   // o "CLOSED" si lo soportás
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.4.0
+        id: pair_19294e38312d41c0ac72fe7694e878d2
+      - id: pair_32b4a12663a24d2ea97a85ac30e8c652
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWdhMkBleGFtcGxlLmNvbSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzU1NjkyOTIzLCJleHAiOjE3NTU3NzkzMjN9.fNf-5UknUAzbtExTgOJ8mxLsamfHZDSHEq7k7DN0TJM
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/v1/topics/{id}
+    name: Borrar
+    meta:
+      id: req_93fb7b9fcb6b4eeeaf2e785c3fbd42b2
+      created: 1755694100004
+      modified: 1755694178827
+      isPrivate: false
+      description: ""
+      sortKey: -1755694100004
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.4.0
+        id: pair_fb6f08a14465416dbbbffc9fb1bf3286
+      - id: pair_673e2b0f19a748f8a0904d9e7651d00c
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWdhMkBleGFtcGxlLmNvbSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzU1NjkyOTIzLCJleHAiOjE3NTU3NzkzMjN9.fNf-5UknUAzbtExTgOJ8mxLsamfHZDSHEq7k7DN0TJM
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_fd82fbc3158b668647501f27a67a6afb3d9dce9b
+    created: 1755680328535
+    modified: 1755680328535
+environments:
+  name: Base Environment
+  meta:
+    id: env_fd82fbc3158b668647501f27a67a6afb3d9dce9b
+    created: 1755680328531
+    modified: 1755681131106
+    isPrivate: false
